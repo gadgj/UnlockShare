@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WorkBook xmlVersion="20170720" releaseVersion="9.0.0">
+<TableDataMap>
+<TableData name="ds1" class="com.fr.data.impl.DBTableData">
+<Parameters/>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[mysql-手机解锁项目]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[SELECT * FROM `solutiondetail`]]></Query>
+</TableData>
+</TableDataMap>
+<Report class="com.fr.report.worksheet.WorkSheet" name="sheet1">
+<ReportPageAttr>
+<HR/>
+<FR/>
+<HC/>
+<FC/>
+</ReportPageAttr>
+<ColumnPrivilegeControl/>
+<RowPrivilegeControl/>
+<RowHeight defaultValue="723900">
+<![CDATA[723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900]]></RowHeight>
+<ColumnWidth defaultValue="2743200">
+<![CDATA[3009900,3162300,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200]]></ColumnWidth>
+<CellElementList>
+<C c="0" r="0" s="0">
+<O>
+<![CDATA[机型]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="0" s="0">
+<O>
+<![CDATA[型号]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="0" s="0">
+<O>
+<![CDATA[适用版本]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="0" s="0">
+<O>
+<![CDATA[降级后版本]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="0" s="0">
+<O>
+<![CDATA[下载链接]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="0" s="0">
+<O>
+<![CDATA[提取码]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="6" r="0" s="0">
+<O>
+<![CDATA[解压密码]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="0" s="0">
+<O>
+<![CDATA[手机图片]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="1" s="1">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="type"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<NameJavaScriptGroup>
+<NameJavaScript name="网页链接1">
+<JavaScript class="com.fr.js.WebHyperlink">
+<JavaScript class="com.fr.js.WebHyperlink">
+<Parameters>
+<Parameter>
+<Attributes name="type"/>
+<O>
+<![CDATA[$$$]]></O>
+</Parameter>
+</Parameters>
+<TargetFrame>
+<![CDATA[_blank]]></TargetFrame>
+<Features width="600" height="400"/>
+<URL>
+<![CDATA[/手机解锁项目/方案详情.cpt]]></URL>
+</JavaScript>
+</JavaScript>
+</NameJavaScript>
+</NameJavaScriptGroup>
+<Expand dir="0"/>
+</C>
+<C c="1" r="1" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="specification"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="2" r="1" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="version"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="3" r="1" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="downversion"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="4" r="1" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="link"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="5" r="1" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="code"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="6" r="1" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="unzipkey"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="7" r="1" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="picture"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+</CellElementList>
+<ReportAttrSet>
+<ReportSettings headerHeight="0" footerHeight="0">
+<PaperSetting/>
+<Background name="ColorBackground" color="-1"/>
+</ReportSettings>
+<Header reportPageType="0">
+<Background name="NullBackground"/>
+<LeftList/>
+<CenterList/>
+<RightList/>
+</Header>
+<Footer reportPageType="0">
+<Background name="NullBackground"/>
+<LeftList/>
+<CenterList/>
+<RightList/>
+</Footer>
+</ReportAttrSet>
+<PrivilegeControl/>
+</Report>
+<ReportParameterAttr>
+<Attributes showWindow="true" delayPlaying="true" windowPosition="1" align="0" useParamsTemplate="true"/>
+<PWTitle>
+<![CDATA[参数]]></PWTitle>
+</ReportParameterAttr>
+<StyleList>
+<Style horizontal_alignment="0" imageLayout="1">
+<FRFont name="SimSun" style="0" size="128"/>
+<Background name="ColorBackground" color="-3342337"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0" imageLayout="1">
+<FRFont name="SimSun" style="0" size="96" foreground="-16776961" underline="1"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0" imageLayout="1">
+<FRFont name="SimSun" style="0" size="96"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+</StyleList>
+<DesignerVersion DesignerVersion="JAA"/>
+<PreviewType PreviewType="0"/>
+<TemplateID TemplateID="51e7d7bf-7efa-476d-99ec-34aa08b8b633"/>
+<TemplateIdAttMark class="com.fr.base.iofileattr.TemplateIdAttrMark">
+<TemplateIdAttMark TemplateId="17300ed8-c55b-49e6-8b37-6f65f2dda03f"/>
+</TemplateIdAttMark>
+</WorkBook>
