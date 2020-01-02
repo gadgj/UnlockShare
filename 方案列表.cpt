@@ -138,7 +138,7 @@
 <Attributes name="url"/>
 <O t="Formula" class="Formula">
 <Attributes>
-<![CDATA[="http://192.168.1.2:443/csschpws/ReportServer?reportlet=方案详情.cpt"]]></Attributes>
+<![CDATA[="http://192.168.1.2:443/csschpws/ReportServer?reportlet=手机解锁项目/方案详情.cpt"]]></Attributes>
 </O>
 </Parameter>
 <Parameter>
@@ -151,7 +151,8 @@
 </Parameters>
 <Content>
 <![CDATA[var iframe = $("<iframe id='inp' name='inp' width='100%' height='100%' scrolling='yes' frameborder='0'>"); // 对话框内 iframe 参数的命名，默认宽高占比是 100%，可向下滚动
-iframe.attr("src", url); // 给 iframe 添加 src 属性
+//将NAME参数的值进行解码
+iframe.attr("src", encodeURI(url)); // 给 iframe 添加 src 属性
 var o = {
 	width: 960, //对话框宽度
 	height: 550 //对话框高度
