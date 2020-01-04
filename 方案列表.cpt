@@ -18,6 +18,15 @@
 <ToolBars/>
 <WebPage isPage="true" isShowAsImage="false" isAutoScale="false" isTDHeavy="false"/>
 </WebPageContent>
+<WebWriteContent>
+<ToolBars/>
+<SelectedColor/>
+<WebWrite SheetPosition="3"/>
+<RptLocation isShowAtLeft="false"/>
+<UnloadCheck/>
+<ShowWidgets/>
+<OtherAttr isAutoStash="false"/>
+</WebWriteContent>
 </ReportWebAttr>
 <Report class="com.fr.report.worksheet.WorkSheet" name="sheet1">
 <ReportPageAttr>
@@ -31,7 +40,7 @@
 <RowHeight defaultValue="723900">
 <![CDATA[1728000,1152000,723900,723900,723900,723900,723900,723900,723900,723900,723900]]></RowHeight>
 <ColumnWidth defaultValue="2743200">
-<![CDATA[0,3771900,5105400,5219700,6019800,3238500,2743200,2743200,2743200,2743200,2743200]]></ColumnWidth>
+<![CDATA[0,3771900,5105400,5219700,6019800,3238500,1866900,4152900,2743200,2743200,2743200]]></ColumnWidth>
 <CellElementList>
 <C c="0" r="0">
 <O>
@@ -67,6 +76,24 @@
 <O>
 <![CDATA[详情]]></O>
 <PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="0">
+<PrivilegeControl/>
+<Widget class="com.fr.form.ui.FreeButton">
+<Listener event="click">
+<JavaScript class="com.fr.js.JavaScriptImpl">
+<Parameters/>
+<Content>
+<![CDATA[window.open("http://192.168.1.2:443/csschpws/ReportServer?op=fs");]]></Content>
+</JavaScript>
+</Listener>
+<WidgetAttr description="">
+<PrivilegeControl/>
+</WidgetAttr>
+<Text>
+<![CDATA[会员登录入口==>]]></Text>
+</Widget>
 <Expand/>
 </C>
 <C c="0" r="1">
@@ -138,7 +165,7 @@
 <Attributes name="url"/>
 <O t="Formula" class="Formula">
 <Attributes>
-<![CDATA[="http://192.168.1.2:443/csschpws/ReportServer?reportlet=手机解锁项目/方案详情.cpt"]]></Attributes>
+<![CDATA[=IF($fr_username <> "guest" && $fr_username <> null, "http://192.168.1.2:443/csschpws/ReportServer?reportlet=手机解锁项目/方案详情.cpt", "http://192.168.1.2:443/csschpws/ReportServer?op=fs_load&cmd=fs_signin&_=1577978525690")]]></Attributes>
 </O>
 </Parameter>
 <Parameter>
@@ -148,16 +175,38 @@
 <![CDATA[=A1]]></Attributes>
 </O>
 </Parameter>
+<Parameter>
+<Attributes name="username"/>
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=$fr_username]]></Attributes>
+</O>
+</Parameter>
 </Parameters>
 <Content>
-<![CDATA[var iframe = $("<iframe id='inp' name='inp' width='100%' height='100%' scrolling='yes' frameborder='0'>"); // 对话框内 iframe 参数的命名，默认宽高占比是 100%，可向下滚动
-//将NAME参数的值进行解码
-iframe.attr("src", encodeURI(url)); // 给 iframe 添加 src 属性
-var o = {
-	width: 960, //对话框宽度
-	height: 550 //对话框高度
-};
-FR.showDialog(title, o.width, o.height, iframe, o); //弹出对话框]]></Content>
+<![CDATA[//详情iframe,默认宽高占比是 100%，可向下滚动
+var iframe = $("<iframe id='inp' name='inp' width='100%' height='100%' scrolling='yes' frameborder='0'>");
+
+console.log("username:" + username + "|" + (typeof username));
+console.log(username.length);
+console.log(url);
+if(username == "guest" || username == null || username == undefined || username.length == 0 || username == "null")
+//if(true)
+{
+	url = "http://192.168.1.2:443/csschpws/ReportServer?op=fs_load&cmd=fs_signin";
+	console.log("进来了");
+	FR.Msg.confirm("提示","当前不是会员账号，请使用会员登录。（如无会员，请联系QQ123456注册会员）",function(value){ if(value){ window.open(encodeURI(url)); } else{ } },100)
+}else
+{
+	url = "http://192.168.1.2:443/csschpws/ReportServer?reportlet=手机解锁项目/方案详情.cpt";
+	//将url编码
+	iframe.attr("src", encodeURI(url)); // 给 iframe 添加 src 属性
+	var o = {
+		width: 960, //对话框宽度
+		height: 550 //对话框高度
+	};
+	FR.showDialog(title, o.width, o.height, iframe, o); //弹出对话框
+}]]></Content>
 </JavaScript>
 </NameJavaScript>
 </NameJavaScriptGroup>
